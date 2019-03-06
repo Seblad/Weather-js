@@ -1,0 +1,257 @@
+body {
+	margin: 0;
+	padding: 0;
+}
+#weatherbackground{
+    display: flex;
+    height: 100%;
+    width: 100%;
+    position: relative;
+    background-size: cover;
+    background-image: url("images/background.jpg");
+    z-index: 0;
+}
+#search-container{
+    border-radius: 15%;
+    margin-left: auto; 
+    margin-right: auto;
+    margin-top: auto;
+    margin-bottom: auto; 
+    width: 200px;
+    height: 200px;
+    background-color: blue;
+    z-index: 999;
+    opacity: 0.6;
+    transition: opacity 0.25s ease-in-out;
+}
+#search-container:hover{
+    opacity: 0.9;
+}
+.search{
+    margin-left:45px;
+    margin-top:85px;
+    background-image: url("http://www.clker.com/cliparts/Y/x/X/j/U/f/search-button-without-text-md.png");
+    background-size: 30px 30px;
+    background-position: right 20px top;
+    background-repeat: no-repeat;
+}
+input{
+    width: 100px;
+    height: 30px;
+}
+/* temperature  -------------------------------------*/
+.cold{
+    display: flex;
+    height: 100%;
+    width:100%;
+    position: absolute;
+    object-fit: cover;
+    background-image: url("https://previews.123rf.com/images/fotosav/fotosav0809/fotosav080900021/3534444-hoarfrost-the-patterns-made-by-the-frost-on-the-window-hoarfrost-background-.jpg");
+    z-index: 2;
+    -webkit-mask-image: -webkit-radial-gradient(50% 50%, circle, transparent 75%, black 200%);
+    mask-image: radial-gradient(50% 50%, circle, transparent 30%, black 80%);
+    mask-position: center, top left;
+    mask-repeat: no-repeat, no-repeat;
+    opacity: 0.6;
+    background-size: 50% 50%;
+    background-repeat: repeat;
+    mix-blend-mode: screen;
+    animation: pulse 4s 1 ease-in-out;
+}
+.hot{
+}
+
+
+.heat{
+}
+/* clouds  -------------------------------------*/
+.fullcloudiness{
+    
+}
+.mostylcloudly{
+}
+.scatteredclouds{
+}
+/* time -------------------------------------*/
+.time{
+    display: flex;
+    height: 100%;
+    width:100%;
+    position: absolute;
+    object-fit: cover;
+}
+
+/* precipitation  -------------------------------------*/
+.raindrizzle{
+}
+.shower{
+}
+.rainfall{
+}
+.heavyrainfall{
+}
+.snowheavysnowfall{
+}
+.snowlightsnowfall{
+}
+/* wind  -------------------------------------*/
+.gentlewind{
+}
+.windy{
+}
+.hurricane{
+}
+
+.sky-gradient-0, .sky-gradient-24 { background: #00000c; background-size: cover; height:100%; width: 100%; display: flex; position: absolute; z-index:0;}
+.sky-gradient-1 { background: linear-gradient(to bottom, #020111 85%,#191621 100%); background-size: cover; height:100%; width: 100%; display: flex; position: absolute; z-index:0;}
+.sky-gradient-2 { background: linear-gradient(to bottom, #020111 60%,#20202c 100%); background-size: cover; height:100%; width: 100%; display: flex; position: absolute; z-index:0;}
+.sky-gradient-3 { background: linear-gradient(to bottom, #020111 10%,#3a3a52 100%); background-size: cover; height:100%; width: 100%; display: flex; position: absolute; z-index:0;}
+.sky-gradient-4 { background: linear-gradient(to bottom, #20202c 0%,#515175 100%); background-size: cover; height:100%; width: 100%; display: flex; position: absolute; z-index:0;}
+.sky-gradient-5 { background: linear-gradient(to bottom, #40405c 0%,#6f71aa 80%,#8a76ab 100%); background-size: cover; height:100%; width: 100%; display: flex; position: absolute; z-index:0;}
+.sky-gradient-6 { background: linear-gradient(to bottom, #4a4969 0%,#7072ab 50%,#cd82a0 100%); background-size: cover; height:100%; width: 100%; display: flex; position: absolute; z-index:0;}
+.sky-gradient-7 { background: linear-gradient(to bottom, #757abf 0%,#8583be 60%,#eab0d1 100%); background-size: cover; height:100%; width: 100%; display: flex; position: absolute; z-index:0;}
+.sky-gradient-8 { background: linear-gradient(to bottom, #82addb 0%,#ebb2b1 100%); background-size: cover; height:100%; width: 100%; display: flex; position: absolute; z-index:0;}
+.sky-gradient-9 { background: linear-gradient(to bottom, #94c5f8 1%,#a6e6ff 70%,#b1b5ea 100%); background-size: cover; height:100%; width: 100%; display: flex; position: absolute; z-index:0;}
+.sky-gradient-10 { background: linear-gradient(to bottom, #b7eaff 0%,#94dfff 100%); background-size: cover; height:100%; width: 100%; display: flex; position: absolute; z-index:0;}
+.sky-gradient-11 { background: linear-gradient(to bottom, #9be2fe 0%,#67d1fb 100%); background-size: cover; height:100%; width: 100%; display: flex; position: absolute; z-index:0;}
+.sky-gradient-12 { background: linear-gradient(to bottom, #90dffe 0%,#38a3d1 100%); background-size: cover; height:100%; width: 100%; display: flex; position: absolute; z-index:0;}
+.sky-gradient-13 { background: linear-gradient(to bottom, #57c1eb 0%,#246fa8 100%); background-size: cover; height:100%; width: 100%; display: flex; position: absolute; z-index:0;}
+.sky-gradient-14 { background: linear-gradient(to bottom, #2d91c2 0%,#1e528e 100%); background-size: cover; height:100%; width: 100%; display: flex; position: absolute; z-index:0;}
+.sky-gradient-15 { background: linear-gradient(to bottom, #2473ab 0%,#1e528e 70%,#5b7983 100%); background-size: cover; height:100%; width: 100%; display: flex; position: absolute; z-index:0;}
+.sky-gradient-16 { background: linear-gradient(to bottom, #1e528e 0%,#265889 50%,#9da671 100%); background-size: cover; height:100%; width: 100%; display: flex; position: absolute; z-index:0;}
+.sky-gradient-17 { background: linear-gradient(to bottom, #1e528e 0%,#728a7c 50%,#e9ce5d 100%); background-size: cover; height:100%; width: 100%; display: flex; position: absolute; z-index:0;}
+.sky-gradient-18 { background: linear-gradient(to bottom, #154277 0%,#576e71 30%,#e1c45e 70%,#b26339 100%); background-size: cover; height:100%; width: 100%; display: flex; position: absolute; z-index:0;}
+.sky-gradient-19 { background: linear-gradient(to bottom, #163C52 0%,#4F4F47 30%,#C5752D 60%,#B7490F 80%, #2F1107 100%); background-size: cover; height:100%; width: 100%; display: flex; position: absolute; z-index:0;}
+.sky-gradient-20 { background: linear-gradient(to bottom, #071B26 0%,#071B26 30%,#8A3B12 80%,#240E03 100%); background-size: cover; height:100%; width: 100%; display: flex; position: absolute; z-index:0;}
+.sky-gradient-21 { background: linear-gradient(to bottom, #010A10 30%,#59230B 80%,#2F1107 100%); background-size: cover; height:100%; width: 100%; display: flex; position: absolute; z-index:0;}
+.sky-gradient-22 { background: linear-gradient(to bottom, #090401 50%,#4B1D06 100%); background-size: cover; height:100%; width: 100%; display: flex; position: absolute; z-index:0;}
+.sky-gradient-23 { background: linear-gradient(to bottom, #00000c 80%,#150800 100%); background-size: cover; height:100%; width: 100%; display: flex; position: absolute; z-index:0;}
+
+/* ANIMATIONS */
+
+.x1 {
+	-webkit-animation: animateCloud 5s linear infinite;
+	-moz-animation: animateCloud 5s linear infinite;
+    animation: animateCloud 5s linear infinite;
+	-webkit-transform: scale(0.65);
+	-moz-transform: scale(0.65);
+    transform: scale(0.65);
+}
+
+.x2 {
+	-webkit-animation: animateCloud 10s linear infinite;
+	-moz-animation: animateCloud 10s linear infinite;
+	animation: animateCloud 10s linear infinite; 
+	-webkit-transform: scale(0.3);
+	-moz-transform: scale(0.3);
+	transform: scale(0.3);
+}
+
+.x3 {
+	-webkit-animation: animateCloud 30s linear infinite;
+	-moz-animation: animateCloud 30s linear infinite;
+	animation: animateCloud 30s linear infinite; 
+	
+	-webkit-transform: scale(0.5);
+	-moz-transform: scale(0.5);
+	transform: scale(0.5);
+}
+
+.x4 {
+	-webkit-animation: animateCloud 18s linear infinite; 
+	-moz-animation: animateCloud 18s linear infinite;
+	animation: animateCloud 18s linear infinite;
+	 
+	-webkit-transform: scale(0.4);
+	-moz-transform: scale(0.4);
+	transform: scale(0.4);
+}
+
+.x5 {
+	-webkit-animation: animateCloud 25s linear infinite;
+	-moz-animation: animateCloud 25s linear infinite;
+	animation: animateCloud 25s linear infinite;
+	
+	-webkit-transform: scale(0.55);
+	-moz-transform: scale(0.55);
+	transform: scale(0.55);
+}
+
+@-webkit-keyframes animateCloud {
+    0% {
+        margin-left: -1500px;
+    }
+    100% {
+        margin-left: 100%;
+    }
+}
+
+@-moz-keyframes animateCloud {
+    0% {
+        margin-left: -1500px;
+    }
+    100% {
+        margin-left: 100%;
+    }
+}
+
+@keyframes animateCloud {
+    0% {
+        margin-left: -1500px;
+    }
+    100% {
+        margin-left: 100%;
+    }
+}
+
+/* OBJECTS */
+
+.cloud{
+	background: #fff;
+	background: -moz-linear-gradient(top,  #fff 5%, #f1f1f1 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(5%,#fff), color-stop(100%,#f1f1f1));
+	background: -webkit-linear-gradient(top,  #fff 5%,#f1f1f1 100%);
+	background: -o-linear-gradient(top,  #fff 5%,#f1f1f1 100%);
+	background: -ms-linear-gradient(top,  #fff 5%,#f1f1f1 100%);
+	background: linear-gradient(top,  #fff 5%,#f1f1f1 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fff', endColorstr='#f1f1f1',GradientType=0 );
+	z-index: 1;
+	-webkit-border-radius: 100px;
+	-moz-border-radius: 100px;
+	border-radius: 100px;
+	-webkit-box-shadow: 0 8px 5px rgba(0, 0, 0, 0.1);
+	-moz-box-shadow: 0 8px 5px rgba(0, 0, 0, 0.1);
+	box-shadow: 0 8px 5px rgba(0, 0, 0, 0.1);
+	height: 120px;
+	position: absolute;
+    width: 350px;
+}
+
+.cloud:after, .cloud:before {
+    background: #fff;
+	content: '';
+	position: absolute;
+	z-indeX: 1;
+}
+
+.cloud:after {
+	-webkit-border-radius: 100px;
+	-moz-border-radius: 100px;
+	border-radius: 100px;
+	height: 100px;
+	left: 50px;
+	top: -50px;
+    width: 100px;
+}
+
+.cloud:before {
+	-webkit-border-radius: 200px;
+	-moz-border-radius: 200px;
+	border-radius: 200px;
+
+	width: 180px;
+	height: 180px;
+	right: 50px;
+	top: -90px;
+}
+/* transition
