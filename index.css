@@ -22,11 +22,25 @@ body {
     background-color: blue;
     z-index: 999;
     opacity: 0.6;
-    transition: opacity 0.25s ease-in-out;
+    transition: opacity 0.5s ease-in-out;
 }
 #search-container:hover{
     opacity: 0.9;
 }
+#search-container-after{
+    background-color: gray;
+    border-radius: 15%;
+    margin-left: auto; 
+    margin-right: auto;
+    margin-top: auto;
+    margin-bottom: auto; 
+    width: 100%;
+    height: 100%;
+    z-index: 999;
+    opacity: 0.6;
+    transition: opacity 0.5s ease-in-out;
+}
+
 .search{
     margin-left:45px;
     margin-top:85px;
@@ -34,10 +48,18 @@ body {
     background-size: 30px 30px;
     background-position: right 20px top;
     background-repeat: no-repeat;
+    
+}
+.search-after{
+    margin-left: 46%; 
+    margin-right: 50%;
+    margin-top: 40%;
+    position: fixed;
 }
 input{
     width: 100px;
     height: 30px;
+    position: sticky;
 }
 /* temperature  -------------------------------------*/
 .cold{
@@ -130,77 +152,83 @@ input{
 /* ANIMATIONS */
 
 .x1 {
-	-webkit-animation: animateCloud 5s linear infinite;
-	-moz-animation: animateCloud 5s linear infinite;
-    animation: animateCloud 5s linear infinite;
+	-webkit-animation: animateCloud 5s linear 1;
+	-moz-animation: animateCloud 5s linear 1;
+    animation: animateCloud 5s linear 1;
 	-webkit-transform: scale(0.65);
 	-moz-transform: scale(0.65);
     transform: scale(0.65);
+    margin-top: 50px;
+    margin-right: auto;
+    animation-fill-mode: none;
 }
 
 .x2 {
-	-webkit-animation: animateCloud 10s linear infinite;
-	-moz-animation: animateCloud 10s linear infinite;
-	animation: animateCloud 10s linear infinite; 
-	-webkit-transform: scale(0.3);
-	-moz-transform: scale(0.3);
-	transform: scale(0.3);
+	-webkit-animation: animateCloud 5s linear 1;
+	-moz-animation: animateCloud 5s linear 1;
+	animation: animateCloud 5s linear 1; 
+	-webkit-transform: scale(0.8);
+	-moz-transform: scale(0.8);
+    transform: scale(0.8);
+    margin-top: 120px;
+    animation-direction: reverse;
+    animation-fill-mode: none;
 }
 
 .x3 {
-	-webkit-animation: animateCloud 30s linear infinite;
-	-moz-animation: animateCloud 30s linear infinite;
-	animation: animateCloud 30s linear infinite; 
+	-webkit-animation: animateCloud 5s linear 1;
+	-moz-animation: animateCloud 5s linear 1;
+	animation: animateCloud 5s linear 1;
 	
 	-webkit-transform: scale(0.5);
 	-moz-transform: scale(0.5);
-	transform: scale(0.5);
+    transform: scale(0.5);
+    margin-top:60px;
+    animation-fill-mode: none;
 }
 
 .x4 {
-	-webkit-animation: animateCloud 18s linear infinite; 
-	-moz-animation: animateCloud 18s linear infinite;
-	animation: animateCloud 18s linear infinite;
+	-webkit-animation: animateCloud 5s linear 1; 
+	-moz-animation: animateCloud 5s linear 1;
+	animation: animateCloud 5s linear 1;
 	 
 	-webkit-transform: scale(0.4);
 	-moz-transform: scale(0.4);
-	transform: scale(0.4);
+    transform: scale(0.4);
+    margin-top:100px;
+    animation-fill-mode: none;
 }
 
 .x5 {
-	-webkit-animation: animateCloud 25s linear infinite;
-	-moz-animation: animateCloud 25s linear infinite;
-	animation: animateCloud 25s linear infinite;
-	
+	-webkit-animation: animateCloud 5s linear 1;
+	-moz-animation: animateCloud 5s linear 1;
+	animation: animateCloud 5s linear 1;
+
 	-webkit-transform: scale(0.55);
 	-moz-transform: scale(0.55);
-	transform: scale(0.55);
+    transform: scale(0.55);
+    margin-top:20px;
+    animation-fill-mode: none;
 }
 
 @-webkit-keyframes animateCloud {
     0% {
-        margin-left: -1500px;
-    }
-    100% {
-        margin-left: 100%;
+        margin-left: -1600px;
+        animation-play-state:running;
     }
 }
 
 @-moz-keyframes animateCloud {
     0% {
-        margin-left: -1500px;
-    }
-    100% {
-        margin-left: 100%;
+        margin-left: -1600px;
+        animation-play-state:running;
     }
 }
 
 @keyframes animateCloud {
     0% {
-        margin-left: -1500px;
-    }
-    100% {
-        margin-left: 100%;
+        margin-left: -1600px;
+        animation-play-state:running;
     }
 }
 
@@ -223,7 +251,7 @@ input{
 	-moz-box-shadow: 0 8px 5px rgba(0, 0, 0, 0.1);
 	box-shadow: 0 8px 5px rgba(0, 0, 0, 0.1);
 	height: 120px;
-	position: absolute;
+	position: fixed;
     width: 350px;
 }
 

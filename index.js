@@ -26,6 +26,8 @@ searchInput.addEventListener("keyup", enterPressed);
         if (searchInput.value===""){
             }
             else   {
+            document.getElementById("search-container").id = "search-container-after";
+            document.getElementById("search-box").className="search-after";
             let  SearchLink = "https://api.openweathermap.org/data/2.5/weather?q=" + searchInput.value + "&appid="+ Key;
             let weatherData = fetch(SearchLink)
             .then(function (response) {
@@ -72,15 +74,13 @@ searchInput.addEventListener("keyup", enterPressed);
                     }
                     else if(CloudValue>=0){
                         cloudiness.className='fullcloudiness'
-                        
-                            setInterval(() => {for(x=0; x<9;x++){  
-                            let cloud = document.createElement('div')
+                        for(x=0; x<1;x++){
+                            setInterval(function (){let cloud = document.createElement('div')
                             cloudiness.appendChild(cloud)
                             cloud.classList.add('cloud')     
-                            cloud.classList.add('x2')
-                                
-                            }}, 3000);
-                    }
+                            cloud.classList.add('x'+ Math.floor((Math.random() * 5) + 1))}, 1000);
+                        }
+                    }   
                     else{
                         cloudiness.className='x2 cloud'
                         for(x=0; x<9;x++){
