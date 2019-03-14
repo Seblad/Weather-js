@@ -34,11 +34,14 @@ body {
     margin-right: auto;
     margin-top: auto;
     margin-bottom: auto; 
-    width: 100%;
-    height: 100%;
+    width: 700px;
+    height: 500px;
     z-index: 999;
-    opacity: 0.6;
+    opacity: 0.4;
     transition: opacity 0.5s ease-in-out;
+}
+#search-container-after:hover{
+opacity: 0.7;
 }
 
 .search{
@@ -51,9 +54,8 @@ body {
     
 }
 .search-after{
-    margin-left: 46%; 
-    margin-right: 50%;
-    margin-top: 40%;
+    margin-left: 22%;
+    margin-top: 28%;
     position: fixed;
 }
 input{
@@ -61,31 +63,7 @@ input{
     height: 30px;
     position: sticky;
 }
-/* temperature  -------------------------------------*/
-.cold{
-    display: flex;
-    height: 100%;
-    width:100%;
-    position: absolute;
-    object-fit: cover;
-    background-image: url("https://previews.123rf.com/images/fotosav/fotosav0809/fotosav080900021/3534444-hoarfrost-the-patterns-made-by-the-frost-on-the-window-hoarfrost-background-.jpg");
-    z-index: 2;
-    -webkit-mask-image: -webkit-radial-gradient(50% 50%, circle, transparent 75%, black 200%);
-    mask-image: radial-gradient(50% 50%, circle, transparent 30%, black 80%);
-    mask-position: center, top left;
-    mask-repeat: no-repeat, no-repeat;
-    opacity: 0.6;
-    background-size: 50% 50%;
-    background-repeat: repeat;
-    mix-blend-mode: screen;
-    animation: pulse 4s 1 ease-in-out;
-}
-.hot{
-}
 
-
-.heat{
-}
 /* clouds  -------------------------------------*/
 .fullcloudiness{
     
@@ -155,6 +133,9 @@ input{
 	-webkit-animation: animateCloud 5s linear 1;
 	-moz-animation: animateCloud 5s linear 1;
     animation: animateCloud 5s linear 1;
+    -webkit-animation-duration: animateCloud 2s;
+	-moz-animation-duration: animateCloud 2s;
+    animation-duration: animateCloud 2s;
 	-webkit-transform: scale(0.65);
 	-moz-transform: scale(0.65);
     transform: scale(0.65);
@@ -212,24 +193,25 @@ input{
 }
 
 @-webkit-keyframes animateCloud {
-    0% {
+    from {
         margin-left: -1600px;
         animation-play-state:running;
     }
 }
 
 @-moz-keyframes animateCloud {
-    0% {
+    from {
         margin-left: -1600px;
         animation-play-state:running;
     }
 }
 
 @keyframes animateCloud {
-    0% {
+    from {
         margin-left: -1600px;
         animation-play-state:running;
     }
+
 }
 
 /* OBJECTS */
@@ -243,7 +225,7 @@ input{
 	background: -ms-linear-gradient(top,  #fff 5%,#f1f1f1 100%);
 	background: linear-gradient(top,  #fff 5%,#f1f1f1 100%);
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fff', endColorstr='#f1f1f1',GradientType=0 );
-	z-index: 1;
+	z-index: 3;
 	-webkit-border-radius: 100px;
 	-moz-border-radius: 100px;
 	border-radius: 100px;
@@ -259,7 +241,7 @@ input{
     background: #fff;
 	content: '';
 	position: absolute;
-	z-indeX: 1;
+	z-indeX: 3;
 }
 
 .cloud:after {
@@ -282,4 +264,128 @@ input{
 	right: 50px;
 	top: -90px;
 }
-/* transition
+
+#sun 
+{
+        position: fixed;
+        right: 0;
+        width: 15vmin;
+        height: 15vmin;
+        border-radius: 50%;
+        border-color: #fff;
+        margin-right: 100px;
+        margin-top: 30px;
+        background: #fff;
+        -webkit-box-shadow: 0 0 20px rgba(253, 220, 189, 0.5);
+        box-shadow: 0 0 20px rgba(253, 220, 189, 0.5);
+        z-index: 0;
+}
+/* city ----------------------*/
+
+#city{
+height: 100%;
+width: 100%;
+z-index: 3;
+display: flex; align-items: flex-end;
+flex-direction: row;
+position: fixed;
+}
+.building {
+    position: absolute;
+    bottom: 0;
+    z-index: 1;
+    height: 220px;
+    width: 150px;
+    background: #352864;
+    background: -webkit-gradient(linear, left bottom, left top, from(#352864), to(#4d4280));
+    background: -webkit-linear-gradient(bottom, #352864 0%, #4d4280 100%);
+    background: linear-gradient(to top, #352864 0%, #4d4280 100%);
+}
+.building:nth-child(1) {
+    position: sticky;
+    z-index: 1;
+    height: 220px;
+    width: 150px;
+    background: #352864;
+    background: -webkit-gradient(linear, left bottom, left top, from(#352864), to(#4d4280));
+    background: -webkit-linear-gradient(bottom, #352864 0%, #4d4280 100%);
+    background: linear-gradient(to top, #352864 0%, #4d4280 100%);
+}
+.building:nth-child(2) {
+    position: sticky;
+    margin-left: 15px;
+    margin-right: 15px;
+    z-index: 1;
+    height: 120px;
+    width: 170px;
+    background: darkred;
+    background: -webkit-gradient(linear, left bottom, left top, from(#642830), to(#804242));
+    background: -webkit-linear-gradient(bottom, #352864 0%, #4d4280 100%);
+    background: linear-gradient(to top, #352864 0%, #4d4280 100%);
+}
+.building:nth-child(3) {
+    position: sticky;
+    margin-left: 15px;
+    margin-right: 15px;
+    z-index: 1;
+    height: 120px;
+    width: 170px;
+    background: darkred;
+    background: -webkit-gradient(linear, left bottom, left top, from(#642830), to(#804242));
+    background: -webkit-linear-gradient(bottom, #352864 0%, #4d4280 100%);
+    background: linear-gradient(to top, #352864 0%, #4d4280 100%);
+}
+.building:nth-child(4) {
+    position: sticky;
+    margin-left: 15px;
+    margin-right: 15px;
+    z-index: 1;
+    height: 200px;
+    width: 70px;
+    background: darkred;
+    background: -webkit-gradient(linear, left bottom, left top, from(#642830), to(#804242));
+    background: -webkit-linear-gradient(bottom, #352864 0%, #4d4280 100%);
+    background: linear-gradient(to top, #352864 0%, #4d4280 100%);
+}
+.building:nth-child(5) {
+    position: sticky;
+    margin-left: 15px;
+    margin-right: 15px;
+    z-index: 1;
+    height: 120px;
+    width: 170px;
+    background: darkred;
+    background: -webkit-gradient(linear, left bottom, left top, from(#642830), to(#804242));
+    background: -webkit-linear-gradient(bottom, #352864 0%, #4d4280 100%);
+    background: linear-gradient(to top, #352864 0%, #4d4280 100%);
+}
+.building:nth-child(6) {
+    position: sticky;
+    margin-left: 15px;
+    margin-right: 15px;
+    z-index: 1;
+    height: 120px;
+    width: 170px;
+    background: darkred;
+    background: -webkit-gradient(linear, left bottom, left top, from(#642830), to(#804242));
+    background: -webkit-linear-gradient(bottom, #352864 0%, #4d4280 100%);
+    background: linear-gradient(to top, #352864 0%, #4d4280 100%);
+}
+.building:nth-child(7) {
+    position: sticky;
+    margin-left: 15px;
+    margin-right: 15px;
+    z-index: 1;
+    height: 120px;
+    width: 170px;
+    background: darkred;
+    background: -webkit-gradient(linear, left bottom, left top, from(#642830), to(#804242));
+    background: -webkit-linear-gradient(bottom, #352864 0%, #4d4280 100%);
+    background: linear-gradient(to top, #352864 0%, #4d4280 100%);
+}
+    .building:nth-child(7):after {
+      right: 0;
+      width: 50px;
+      height: 250px;
+      z-index:1;
+    }
