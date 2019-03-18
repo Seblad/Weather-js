@@ -9,7 +9,6 @@ body {
     position: relative;
     background-size: cover;
     background-image: url("images/background.jpg");
-    z-index: 0;
 }
 #search-container{
     border-radius: 15%;
@@ -128,7 +127,12 @@ input{
 .sky-gradient-23 { background: linear-gradient(to bottom, #00000c 80%,#150800 100%); background-size: cover; height:100%; width: 100%; display: flex; position: absolute; z-index:0;}
 
 /* ANIMATIONS */
-
+/* DK: TODO  remove multiplaced animation rules */
+.cloud-ani {
+	-webkit-animation: animateCloud 5s linear infinite;
+	-moz-animation: animateCloud 5s linear infinite;
+    animation: animateCloud 5s linear infinite;
+}
 .x1 {
 	-webkit-animation: animateCloud 5s linear 1;
 	-moz-animation: animateCloud 5s linear 1;
@@ -136,6 +140,7 @@ input{
     -webkit-animation-duration: animateCloud 2s;
 	-moz-animation-duration: animateCloud 2s;
     animation-duration: animateCloud 2s;
+    animation-direction: normal;
 	-webkit-transform: scale(0.65);
 	-moz-transform: scale(0.65);
     transform: scale(0.65);
@@ -203,6 +208,7 @@ input{
     from {
         margin-left: -1600px;
         animation-play-state:running;
+        display: none;
     }
 }
 
@@ -211,7 +217,6 @@ input{
         margin-left: -1600px;
         animation-play-state:running;
     }
-
 }
 
 /* OBJECTS */
@@ -285,7 +290,7 @@ input{
 #city{
 height: 100%;
 width: 100%;
-z-index: 3;
+z-index: 1;
 display: flex; align-items: flex-end;
 flex-direction: row;
 position: fixed;
@@ -293,7 +298,6 @@ position: fixed;
 .building {
     position: absolute;
     bottom: 0;
-    z-index: 1;
     height: 220px;
     width: 150px;
     background: #352864;
@@ -301,21 +305,49 @@ position: fixed;
     background: -webkit-linear-gradient(bottom, #352864 0%, #4d4280 100%);
     background: linear-gradient(to top, #352864 0%, #4d4280 100%);
 }
+.building:before, .building:after {
+    position: absolute;
+    content: '';
+    bottom: 0;
+  }
+  .building:before {
+    z-index: -1;
+    background: #725392;
+    background: -webkit-gradient(linear, left bottom, left top, from(#905392), to(#b764ac));
+    background: -webkit-linear-gradient(bottom, #725392 0%, #b764ac 100%);
+    background: linear-gradient(to top, #725392 0%, #b764ac 100%);
+  }
+  .building:after {
+    z-index: -2;
+    background: #dd7cb9;
+    background: -webkit-gradient(linear, left bottom, left top, from(#dd7cb9), to(#d36796));
+    background: -webkit-linear-gradient(bottom, #dd7cb9 0%, #d36796  100%);
+    background: linear-gradient(to top, #dd7cb9 0%, #d36796 100%);
+  }
+
 .building:nth-child(1) {
-    position: sticky;
-    z-index: 1;
-    height: 220px;
-    width: 150px;
+    position: absolute;
+    height: 90px;
+    width: 180px;
     background: #352864;
     background: -webkit-gradient(linear, left bottom, left top, from(#352864), to(#4d4280));
     background: -webkit-linear-gradient(bottom, #352864 0%, #4d4280 100%);
     background: linear-gradient(to top, #352864 0%, #4d4280 100%);
 }
+.building:nth-child(1):after{
+        left: 50%;
+        width: 155;
+        height: 225px;
+      }
+.building:nth-child(1):before{
+    width: 150px;
+    height: 230px;
+      }
 .building:nth-child(2) {
-    position: sticky;
+    left: 16%;
+    position: absolute;
     margin-left: 15px;
     margin-right: 15px;
-    z-index: 1;
     height: 120px;
     width: 170px;
     background: darkred;
@@ -323,36 +355,56 @@ position: fixed;
     background: -webkit-linear-gradient(bottom, #352864 0%, #4d4280 100%);
     background: linear-gradient(to top, #352864 0%, #4d4280 100%);
 }
+.building:nth-child(2):before {
+    right: 19%;
+    width: 150px;
+    height: 160px;
+  }
+.building:nth-child(2):after {
+    left: 48%;
+    width: 170px;
+    height: 190px;
+}
 .building:nth-child(3) {
-    position: sticky;
+    left: 25%;
+    position: absolute;
     margin-left: 15px;
     margin-right: 15px;
     z-index: 1;
-    height: 120px;
-    width: 170px;
+    height: 150px;
+    width: 270px;
     background: darkred;
     background: -webkit-gradient(linear, left bottom, left top, from(#642830), to(#804242));
     background: -webkit-linear-gradient(bottom, #352864 0%, #4d4280 100%);
     background: linear-gradient(to top, #352864 0%, #4d4280 100%);
 }
 .building:nth-child(4) {
-    position: sticky;
-    margin-left: 15px;
-    margin-right: 15px;
-    z-index: 1;
+    left: 47%;
+    position: absolute;
     height: 200px;
-    width: 70px;
+    width: 80px;
     background: darkred;
     background: -webkit-gradient(linear, left bottom, left top, from(#642830), to(#804242));
     background: -webkit-linear-gradient(bottom, #352864 0%, #4d4280 100%);
     background: linear-gradient(to top, #352864 0%, #4d4280 100%);
 }
+.building:nth-child(4):before {
+    right: 19%;
+    width: 150px;
+    height: 220px;
+  }
+.building:nth-child(4):after {
+    left: 48%;
+    width: 170px;
+    height: 240px;
+}
+
 .building:nth-child(5) {
-    position: sticky;
+    left: 55%;
+    position: absolute;
     margin-left: 15px;
     margin-right: 15px;
-    z-index: 1;
-    height: 120px;
+    height: 150px;
     width: 170px;
     background: darkred;
     background: -webkit-gradient(linear, left bottom, left top, from(#642830), to(#804242));
@@ -360,32 +412,39 @@ position: fixed;
     background: linear-gradient(to top, #352864 0%, #4d4280 100%);
 }
 .building:nth-child(6) {
-    position: sticky;
+    left: 70%;
+    position: absolute;
     margin-left: 15px;
     margin-right: 15px;
-    z-index: 1;
-    height: 120px;
-    width: 170px;
+    height: 160px;
+    width: 100px;
     background: darkred;
     background: -webkit-gradient(linear, left bottom, left top, from(#642830), to(#804242));
     background: -webkit-linear-gradient(bottom, #352864 0%, #4d4280 100%);
     background: linear-gradient(to top, #352864 0%, #4d4280 100%);
 }
 .building:nth-child(7) {
-    position: sticky;
-    margin-left: 15px;
-    margin-right: 15px;
-    z-index: 1;
-    height: 120px;
+    right: 0;
+    position: absolute;
+    height: 80px;
     width: 170px;
     background: darkred;
     background: -webkit-gradient(linear, left bottom, left top, from(#642830), to(#804242));
     background: -webkit-linear-gradient(bottom, #352864 0%, #4d4280 100%);
     background: linear-gradient(to top, #352864 0%, #4d4280 100%);
 }
-    .building:nth-child(7):after {
-      right: 0;
-      width: 50px;
-      height: 250px;
-      z-index:1;
-    }
+
+.Sun{
+        position: absolute;
+        right: 0;
+        z-index: 1;
+        width: 30vmin;
+        height: 30vmin;
+        border-radius: 50%;
+        border-color: #fff;
+        margin-right: 100px;
+        margin-top: 30px;
+        background: #fff;
+        -webkit-box-shadow: 0 0 20px rgba(253, 220, 189, 0.5);
+        box-shadow: 0 0 20px rgba(253, 220, 189, 0.5);
+}

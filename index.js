@@ -40,41 +40,19 @@ document.addEventListener("DOMContentLoaded", function onDOMLoaded() {
                 })
             weatherData.then(function (resolvedWeatherData) {
                 weather.className = "search-container-2"
+                // temperature
                 let AirTemperatureInCity = Math.round((resolvedWeatherData.main.temp - 273));
                 // clouds
                 let CloudValue = resolvedWeatherData.clouds.all;
-                if (CloudValue >= 1000) {
-                    for (x = 0; x < 9; x++) {
-                        cloudiness.className = 'x2 cloud'
-                        let cloud = document.createElement('div');
-                        cloud.className = 'x1';
-                    }
-                }
-                else if (CloudValue > 1000) {
-                    cloudiness.className = 'x2 cloud'
-                    for (x = 0; x < 9; x++) {
-                        cloudiness.appendChild(cloud)
-                        cloud.classList.add('cloud')
-                        cloud.className = 'x1';
-                    }
-                }
-                else if (CloudValue >= 0) {
-                    cloudiness.className = 'fullcloudiness'
+                if (CloudValue >= 0) {
                     for (x = 0; x < 1; x++) {
                         setInterval(function () {
                             let cloud = document.createElement('div')
                             cloudiness.appendChild(cloud)
                             cloud.classList.add('cloud')
                             cloud.classList.add('x' + Math.floor((Math.random() * 5)+1))
+                        
                         }, 1000);
-
-                    }
-                }
-                else {
-                    cloudiness.className = 'x2 cloud'
-                    for (x = 0; x < 9; x++) {
-                        let cloud = document.createElement('div');
-                        cloud.className = 'x1';
                     }
                 }
 
@@ -82,7 +60,14 @@ document.addEventListener("DOMContentLoaded", function onDOMLoaded() {
                 let CurrentTime = new Date(resolvedWeatherData.dt * 1000);
                 console.log("CurrentTime: ", CurrentTime)
                 let hour = CurrentTime.getHours();
+                
                 time.className = 'sky-gradient-' + hour;
+                if (5>hour>20){
+                    document.getElementById("HeavenlyBody").className="Moon"
+                }
+                else{
+                        document.getElementById("HeavenlyBody").className="Sun"
+                    }
                 console.log(time.className)
                 //precipitation
                 let RainLevel = resolvedWeatherData.rain;
@@ -108,7 +93,7 @@ document.addEventListener("DOMContentLoaded", function onDOMLoaded() {
                 else {
                     rain.className = 'cleanSky'
                 }
-                let windSpeed = resolvedWeatherData.speed;
+                let windSpeed = resolvedWeatherData.wind.speed+"km/h";
                 // wind
                 if (windSpeed > 100) {
                     wind.className = 'hurricane'
@@ -119,6 +104,10 @@ document.addEventListener("DOMContentLoaded", function onDOMLoaded() {
                 else {
                     wind.className = "gentlewind"
                 }
+                document.getElementById("search-container-after").innerHTML=AirTemperatureInCity;
+                document.getElementById("search-container-after").innerHTML=CloudValue;
+                document.getElementById("search-container-after").innerHTML=hour;
+                document.getElementById("search-container-after").innerHTML=windSpeed;
                 //AirTemperatureInCity CloudValue hour RainLevel windSpeed
             })
         }
