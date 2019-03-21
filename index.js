@@ -62,12 +62,16 @@ document.addEventListener("DOMContentLoaded", function onDOMLoaded() {
                 let hour = CurrentTime.getHours();
                 
                 time.className = 'sky-gradient-' + hour;
-                if (5>hour>20){
+                if      (hour>20){
                     document.getElementById("HeavenlyBody").className="Moon"
                 }
-                else{
+                else if (hour<5){
+                        document.getElementById("HeavenlyBody").className="Moon"
+                }
+                else
+                {
                         document.getElementById("HeavenlyBody").className="Sun"
-                    }
+                }
                 console.log(time.className)
                 //precipitation
                 let RainLevel = resolvedWeatherData.rain;
@@ -104,10 +108,10 @@ document.addEventListener("DOMContentLoaded", function onDOMLoaded() {
                 else {
                     wind.className = "gentlewind"
                 }
-                document.getElementById("search-container-after").innerHTML=AirTemperatureInCity;
-                document.getElementById("search-container-after").innerHTML=CloudValue;
-                document.getElementById("search-container-after").innerHTML=hour;
-                document.getElementById("search-container-after").innerHTML=windSpeed;
+                document.getElementById("search-container-after").innerHTML +=wind;
+                document.getElementById("search-container-after").innerHTML +=cloudiness;
+                document.getElementById("search-container-after").innerHTML +=hour;
+                document.getElementById("search-container-after").innerHTML +=windSpeed;
                 //AirTemperatureInCity CloudValue hour RainLevel windSpeed
             })
         }
